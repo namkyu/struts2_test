@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<!-- @ReulstPath is only apply to the class level. To apply it globally, you can configure it in the struts.xml file -->
+	<constant name="struts.convention.result.path" value="/" />
+
+	<!--
+		auto configuration and properties files reload and extra logging and debugging
+		the entire application configuration, properties files will be reloaded on every request
+	-->
+	<constant name="struts.devMode" value="true" />
+
+	<!--
+		all action class has a default suffix .action extension
+		등록하면 .html 확장자로의 요청만 처리한다.
+	-->
+	<constant name="struts.action.extension" value="html" />
+
+<!-- 	<include file="struts-user.xml" /> -->
+
+</struts>
