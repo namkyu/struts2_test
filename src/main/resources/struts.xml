@@ -14,12 +14,6 @@
 	-->
 	<constant name="struts.devMode" value="true" />
 
-	<!--
-		all action class has a default suffix .action extension
-		등록하면 .html 확장자로의 요청만 처리한다.
-	-->
-	<constant name="struts.action.extension" value="html" />
-
-<!-- 	<include file="struts-user.xml" /> -->
+	<include file="struts-user.xml" />
 
 </struts>

@@ -6,7 +6,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
-        <property name="context-root" value="struts2_test"/>
         <property name="java-output-path" value="/struts2_test/target/classes"/>
+        <property name="context-root" value="struts2_test"/>
     </wb-module>
 </project-modules>

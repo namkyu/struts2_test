@@ -1,5 +1,7 @@
 package com.kyu.user.action;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 
 /**
  * @FileName : UserAction.java
@@ -8,9 +10,11 @@ package com.kyu.user.action;
  * @작성자 : nklee
  * @프로그램설명 : xml 설정 파일을 이용한 테스트
  */
-public class UserAction {
+public class UserAction extends ActionSupport {
 
+	private static final long serialVersionUID = 1L;
 	private String username;
+	private String password;
 
 	/**
 	 * @return the username
@@ -33,8 +37,25 @@ public class UserAction {
 	 * <pre>
 	 * @return
 	 */
+	@Override
 	public String execute() {
-		System.out.println("test");
-		return "SUCCESS";
+		return SUCCESS;
+	}
+
+	/**
+	 * <pre>
+	 * validate
+	 *
+	 * <pre>
+	 */
+	@Override
+	public void validate() {
+		if ("".equals(username)) {
+			addFieldError("username", getText("username.required"));
+		}
+
+		if ("".equals(password)) {
+			addFieldError("password", getText("password.required"));
+		}
 	}
 }

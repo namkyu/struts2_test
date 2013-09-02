@@ -5,16 +5,13 @@
 
 <struts>
 
-	<!-- @ReulstPath is only apply to the class level. To apply it globally, you can configure it in the struts.xml file -->
-	<constant name="struts.convention.result.path" value="/" />
-
 	<package name="default" namespace="/user" extends="struts-default">
 		<action name="login">
 			<result>login.jsp</result>
 		</action>
 
 		<action name="welcome" class="com.kyu.user.action.UserAction">
-			<result name="SUCCESS">welcome_user.jsp</result>
+			<result name="success">welcome_user.jsp</result>
 		</action>
 	</package>
 
