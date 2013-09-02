@@ -3,7 +3,11 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
+
 <struts>
+
+	<!-- properties -->
+	<constant name="struts.custom.i18n.resources" value="properties/global" />
 
 	<!-- @ReulstPath is only apply to the class level. To apply it globally, you can configure it in the struts.xml file -->
 	<constant name="struts.convention.result.path" value="/" />
@@ -14,6 +18,24 @@
 	-->
 	<constant name="struts.devMode" value="true" />
 
+
+	<!-- default package -->
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="longProcessAction" class="com.kyu.process.action.LongProcessAction">
+			<interceptor-ref name="execAndWait">
+				<!-- initial delay in milliseconds to show the wait.jsp. Default is no delay -->
+				<param name="delay">1000</param>
+				<!-- Interval in milliseconds to check if the backgroud process is already done. Default is 100 milliseconds -->
+				<param name="delaySleepInterval">500</param>
+			</interceptor-ref>
+
+			<result name="wait">process/wait.jsp</result>
+			<result name="success">process/success.jsp</result>
+		</action>
+	</package>
+
+
 	<include file="struts-user.xml" />
+	<include file="struts-customer.xml" />
 
 </struts>

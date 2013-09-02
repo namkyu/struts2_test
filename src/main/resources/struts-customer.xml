@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="customer" namespace="/customer" extends="struts-default">
+
+
+		<!-- ===================================================== -->
+		<!-- interceptors -->
+		<!-- ===================================================== -->
+		<interceptors>
+			<interceptor name="printMsgInterceptor" class="com.kyu.interceptor.PrintMsgInterceptor" />
+			<interceptor-stack name="newStack">
+				<interceptor-ref name="timer" />
+				<interceptor-ref name="logger" />
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="printMsgInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- ===================================================== -->
+		<!-- actions -->
+		<!-- ===================================================== -->
+		<action name="addCustomerAction" class="com.kyu.customer.action.CustomerAction">
+			<result name="success">addCustomer.jsp</result>
+		</action>
+
+		<action name="customerAction" class="com.kyu.customer.action.CustomerAction">
+			<interceptor-ref name="newStack" />
+			<result name="success">success.jsp</result>
+		</action>
+
+	</package>
+
+</struts>
