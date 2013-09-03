@@ -5,3 +5,4 @@
 <a href="/customer/addCustomerAction">ModelDriven test</a><br/>
 <a href="/customer/addCustomerAction">interceptor test</a><br/>
 <a href="/longProcessAction">process test</a><br/>
+<a href="/fileUploadAction">fileUpload test</a><br/>
