@@ -1,5 +1,9 @@
 package com.kyu.user.action;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 
@@ -39,6 +43,8 @@ public class UserAction extends ActionSupport {
 	 */
 	@Override
 	public String execute() {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		System.out.println(request.getLocalAddr());
 		return SUCCESS;
 	}
 
