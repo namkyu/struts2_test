@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="multi" namespace="/multi" extends="struts-default">
+
+		<!-- method attribute를 이용하여 하나의 Action에서 여러 개의 요청을 받을 수 있음 -->
+		<action name="methodA" class="com.kyu.user.action.MultiMethodAction" method="methodA">
+			<result name="success">multi.jsp</result>
+		</action>
+
+		<action name="methodB" class="com.kyu.user.action.MultiMethodAction" method="methodB">
+			<result name="success">multi.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

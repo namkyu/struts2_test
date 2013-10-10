@@ -72,5 +72,4 @@ public class LoginAction extends ActionSupport {
 			addActionError("I don't know you, dont try to hack me!");
 		}
 	}
-
 }

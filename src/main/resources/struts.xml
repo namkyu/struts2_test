@@ -62,5 +62,6 @@
 	<include file="struts-user.xml" />
 	<include file="struts-customer.xml" />
 	<include file="struts-spring.xml" />
+	<include file="struts-multi.xml" />
 
 </struts>
